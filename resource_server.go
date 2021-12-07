@@ -19,3 +19,18 @@ func resourceServer() *schema.Resource {
                 },
         }
 }
+func resourceServerCreate(d *schema.ResourceData, m interface{}) error {
+        return nil
+}
+
+func resourceServerRead(d *schema.ResourceData, m interface{}) error {
+        return nil
+}
+
+func resourceServerUpdate(d *schema.ResourceData, m interface{}) error {
+        return nil
+}
+
+func resourceServerDelete(d *schema.ResourceData, m interface{}) error {
+        return nil
+}
