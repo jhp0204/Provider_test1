@@ -42,11 +42,11 @@ const (
 	TERABYTE
 )
 
-// ★추가할 Response 확인 >> SCP 기준 ProjectId, requestId, resourceId로 차이 有
+// ★추가할 Response 확인 >> SCP 기준 ProjectId, requestId, resourceId로 차이 有  >> 
 type CommonResponse struct {
 	RequestId     *string `json:"requestId,omitempty"`
-	ReturnCode    *string `json:"returnCode,omitempty"`
-	ReturnMessage *string `json:"returnMessage,omitempty"`
+	projectId    *string `json:"projectId,omitempty"`
+	resourceId *string `json:"resourceId,omitempty"`
 }
 
 //정체 ? 
