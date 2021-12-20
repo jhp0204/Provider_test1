@@ -76,7 +76,7 @@ func logResponse(tag string, args interface{}) {
 	resp, _ := json.Marshal(args)
 	log.Printf("[INFO] %s response=%s", tag, resp)
 }
-
+<!--
 func logCommonResponse(tag string, commonResponse *CommonResponse, logs ...string) {
 	result := fmt.Sprintf("RequestID: %s, ReturnCode: %s, ReturnMessage: %s", ncloud.StringValue(commonResponse.RequestId), ncloud.StringValue(commonResponse.ReturnCode), ncloud.StringValue(commonResponse.ReturnMessage))
 	log.Printf("[INFO] %s success response=%s %s", tag, result, strings.Join(logs, " "))
@@ -91,7 +91,7 @@ func isRetryableErr(commResp *CommonResponse, code []string) bool {
 
 	return false
 }
-
+-->
 func containsInStringList(str string, s []string) bool {
 	for _, v := range s {
 		if v == str {
