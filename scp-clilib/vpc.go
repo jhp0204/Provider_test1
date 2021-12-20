@@ -28,4 +28,3 @@ RegionCode *string `json:"regionCode,omitempty"`
 	// 생성일시
 CreateDate *string `json:"createDate,omitempty"`
 }
-© 2021 GitHu
