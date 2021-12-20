@@ -1,4 +1,4 @@
-// errors.go 상세내용이 각각 필요한지 확인 필요
+// errors.go 상세내용이 각각 필요한지 확인 필요 >> Case만 반영시키고 잘 모르는 부분은 그대로 남겨두어도 될 것 같다.
 package scp
 
 import "fmt"
