@@ -42,23 +42,26 @@ const (
 	TERABYTE
 )
 
+// ★추가할 Response 확인 >> SCP 기준 ProjectId, requestId, resourceId로 차이 有
 type CommonResponse struct {
 	RequestId     *string `json:"requestId,omitempty"`
 	ReturnCode    *string `json:"returnCode,omitempty"`
 	ReturnMessage *string `json:"returnMessage,omitempty"`
 }
 
+//정체 ? 
 type CommonCode struct {
 	Code     *string `json:"code,omitempty"`
 	CodeName *string `json:"codeName,omitempty"`
 }
 
-//CommonError response error body
+//CommonError response error body  >> SCP 기준 Error 시, response Error body 확인 필요
 type CommonError struct {
 	ReturnCode    string
 	ReturnMessage string
 }
 
+// Response 내용 확인 필요
 func logErrorResponse(tag string, err error, args interface{}) {
 	param, _ := json.Marshal(args)
 	log.Printf("[ERROR] %s error params=%s, err=%s", tag, param, err)
