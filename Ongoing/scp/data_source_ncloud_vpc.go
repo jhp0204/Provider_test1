@@ -1,4 +1,5 @@
 //여기서는 생성된 vpc관련 작업으로 확인(datasource, get api)
+// vpc create만 진행할거면 data_source를 굳이 만들 필요가 없지 않은지..
 package scp
 
 //scp sdk 개발 후, 해당 서비스로 package 수정 필요, 내용은 선 수정 진행 
