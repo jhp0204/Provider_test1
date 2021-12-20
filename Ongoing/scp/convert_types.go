@@ -27,27 +27,28 @@ func StringField(f reflect.Value) *string {
 	return nil
 }
 
+// SCP의 CommonResponse에 따라 변경 필요 > 변경 진행
 func GetCommonResponse(i interface{}) *CommonResponse {
 	if i == nil || !validElem(i) {
 		return &CommonResponse{}
 	}
+	var projectId *string
 	var requestId *string
-	var returnCode *string
-	var returnMessage *string
+	var resourceId *string
 
 	if f := reflect.ValueOf(i).Elem().FieldByName("RequestId"); validField(f) {
 		requestId = StringField(f)
 	}
-	if f := reflect.ValueOf(i).Elem().FieldByName("ReturnCode"); validField(f) {
-		returnCode = StringField(f)
+	if f := reflect.ValueOf(i).Elem().FieldByName("ProjectId"); validField(f) {
+		projectId = StringField(f)
 	}
-	if f := reflect.ValueOf(i).Elem().FieldByName("ReturnMessage"); validField(f) {
-		returnMessage = StringField(f)
+	if f := reflect.ValueOf(i).Elem().FieldByName("ResourceId"); validField(f) {
+		resourceId = StringField(f)
 	}
 	return &CommonResponse{
 		RequestId:     requestId,
-		ReturnCode:    returnCode,
-		ReturnMessage: returnMessage,
+		ProjectId:    projectId,
+		ResourceId: resourceId,
 	}
 }
 
@@ -69,6 +70,7 @@ func GetCommonErrorBody(err error) (*CommonError, error) {
 
 	e := m["responseError"].(map[string]interface{})
 
+	// 해당 부분은 SCP의 Error return 확인 필요, 공통 오류 코드 기준으로 보았을 , 너무 많이 나온다. 선별해서 여기에 반영시킬 수 있을지 확인 
 	return &CommonError{
 		ReturnCode:    e["returnCode"].(string),
 		ReturnMessage: e["returnMessage"].(string),
@@ -99,45 +101,6 @@ func GetRegion(i interface{}) *Region {
 	}
 }
 
-func GetZone(i interface{}) *Zone {
-	if i == nil || !reflect.ValueOf(i).Elem().IsValid() {
-		return &Zone{}
-	}
-	var zoneNo *string
-	var zoneDescription *string
-	var zoneName *string
-	var zoneCode *string
-	var regionNo *string
-	var regionCode *string
-
-	if f := reflect.ValueOf(i).Elem().FieldByName("ZoneNo"); validField(f) {
-		zoneNo = StringField(f)
-	}
-	if f := reflect.ValueOf(i).Elem().FieldByName("ZoneName"); validField(f) {
-		zoneName = StringField(f)
-	}
-	if f := reflect.ValueOf(i).Elem().FieldByName("ZoneCode"); validField(f) {
-		zoneCode = StringField(f)
-	}
-	if f := reflect.ValueOf(i).Elem().FieldByName("ZoneDescription"); validField(f) {
-		zoneDescription = StringField(f)
-	}
-	if f := reflect.ValueOf(i).Elem().FieldByName("RegionNo"); validField(f) {
-		regionNo = StringField(f)
-	}
-	if f := reflect.ValueOf(i).Elem().FieldByName("RegionCode"); validField(f) {
-		regionCode = StringField(f)
-	}
-
-	return &Zone{
-		ZoneNo:          zoneNo,
-		ZoneName:        zoneName,
-		ZoneCode:        zoneCode,
-		ZoneDescription: zoneDescription,
-		RegionNo:        regionNo,
-		RegionCode:      regionCode,
-	}
-}
 
 //StringPtrOrNil return *string from interface{}
 func StringPtrOrNil(v interface{}, ok bool) *string {
