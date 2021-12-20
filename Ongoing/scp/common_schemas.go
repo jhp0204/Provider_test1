@@ -1,4 +1,6 @@
 // ncloud의 zone과 관련된 schema의 용어들을 선언, 정의하는 문서로 판단, ncloud의 sdk를 사용하지는 않는다. 추후 scp zone, region 관련정보 확인 후 수정 필요
+
+// ★ SCP의 VPC 생성 시에는 Region을 사용하지 않는다. 불필요 문서로 판단=======================================================
 package scp
 
 import (
