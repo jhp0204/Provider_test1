@@ -46,5 +46,5 @@ type ProviderConfig struct {
 	SupportVPC bool
 	RegionCode string
 	RegionNo   string
-	Client     *NcloudAPIClient
+	Client     *ScpAPIClient
 }
