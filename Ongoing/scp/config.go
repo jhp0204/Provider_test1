@@ -3,9 +3,7 @@ package scp
 // 각 상품별 sdk 정보를 가져와서 진행, 이후 scp용 sdk 작성 후, import package 목록으로 수정, 반영 가능 
 import (
 	"time"
-
-	"github.com/NaverCloudPlatform/ncloud-sdk-go-v2/ncloud"
-	"github.com/NaverCloudPlatform/ncloud-sdk-go-v2/services/vpc"
+	"github.com/jhp0204/Provider_test1"
 )
 
 // DefaultWaitForInterval is Interval for checking status in WaitForXXX method < 큰 수정 불필요 판단 
