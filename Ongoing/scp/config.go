@@ -28,14 +28,14 @@ type ScpAPIClient struct {
 }
 
 // ncloud sdk 부분 변경 필요
-func (c *Config) Client() (*NcloudAPIClient, error) {
+func (c *Config) Client() (*ScpAPIClient, error) {
 	apiKey := &ncloud.APIKey{
 		AccessKey: c.AccessKey,
 		SecretKey: c.SecretKey,
 	}
 // 앞선 상품별 sdk를 연결, 역시 변경해야하는 부분, vpc 제외하고 전체 삭제 
 // ncloud vpc sdk 부분 변경 필요
-	return &NcloudAPIClient{
+	return &ScpAPIClient{
 		vpc:           vpc.NewAPIClient(vpc.NewConfiguration(apiKey)),
 	}, nil
 }
