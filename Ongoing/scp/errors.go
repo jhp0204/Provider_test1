@@ -9,16 +9,16 @@ func NotSupportClassic(name string) error {
 }
 
 //NotSupportVpc return error for not support vpc
-func NotSupportVpc(name string) error {
-	return fmt.Errorf("%s doesn't support vpc", name)
-}
+//func NotSupportVpc(name string) error {
+//	return fmt.Errorf("%s doesn't support vpc", name)
+//}
 
 //ErrorRequiredArgOnVpc return error for required on vpc
-func ErrorRequiredArgOnVpc(name string) error {
-	return fmt.Errorf("missing required argument: The argument \"%s\" is required on vpc", name)
-}
+//func ErrorRequiredArgOnVpc(name string) error {
+//	return fmt.Errorf("missing required argument: The argument \"%s\" is required on vpc", name)
+//}
 
 //ErrorRequiredArgOnClassic return error for required on classic
-func ErrorRequiredArgOnClassic(name string) error {
-	return fmt.Errorf("missing required argument: The argument \"%s\" is required on classic", name)
-}
+//func ErrorRequiredArgOnClassic(name string) error {
+//	return fmt.Errorf("missing required argument: The argument \"%s\" is required on classic", name)
+//}
