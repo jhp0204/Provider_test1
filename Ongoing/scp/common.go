@@ -39,20 +39,20 @@ type CommonError struct {
 }
 
 // Response 내용 확인 필요
-func logErrorResponse(tag string, err error, args interface{}) {
-	param, _ := json.Marshal(args)
-	log.Printf("[ERROR] %s error params=%s, err=%s", tag, param, err)
-}
+//func logErrorResponse(tag string, err error, args interface{}) {
+//	param, _ := json.Marshal(args)
+//	log.Printf("[ERROR] %s error params=%s, err=%s", tag, param, err)
+//}
 
-func logCommonRequest(tag string, args interface{}) {
-	param, _ := json.Marshal(args)
-	log.Printf("[INFO] %s params=%s", tag, param)
-}
+//func logCommonRequest(tag string, args interface{}) {
+//	param, _ := json.Marshal(args)
+//	log.Printf("[INFO] %s params=%s", tag, param)
+//}
 
-func logResponse(tag string, args interface{}) {
-	resp, _ := json.Marshal(args)
-	log.Printf("[INFO] %s response=%s", tag, resp)
-}
+//func logResponse(tag string, args interface{}) {
+//	resp, _ := json.Marshal(args)
+//	log.Printf("[INFO] %s response=%s", tag, resp)
+//}
 
 //func logCommonResponse(tag string, commonResponse *CommonResponse, logs ...string) {
 //	result := fmt.Sprintf("RequestID: %s, ReturnCode: %s, ReturnMessage: %s", ncloud.StringValue(commonResponse.RequestId), ncloud.StringValue(commonResponse.ReturnCode), ncloud.StringValue(commonResponse.ReturnMessage))
