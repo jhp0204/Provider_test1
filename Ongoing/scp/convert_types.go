@@ -76,7 +76,7 @@ func GetCommonErrorBody(err error) (*CommonError, error) {
 		ReturnMessage: e["returnMessage"].(string),
 	}, nil
 }
-
+/* region.go 주석처리에 따른 관련 함수 주석처리
 func GetRegion(i interface{}) *Region {
 	if i == nil || !reflect.ValueOf(i).Elem().IsValid() {
 		return &Region{}
@@ -100,7 +100,7 @@ func GetRegion(i interface{}) *Region {
 		RegionName: regionName,
 	}
 }
-
+*/
 
 //StringPtrOrNil return *string from interface{}
 func StringPtrOrNil(v interface{}, ok bool) *string {
