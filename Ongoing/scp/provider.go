@@ -15,7 +15,7 @@ func Provider() *schema.Provider {
 		Schema:         schemaMap(),
 		DataSourcesMap: DataSourcesMap(),
 		ResourcesMap:   ResourcesMap(),
-		ConfigureFunc:  providerConfigure,
+		ConfigureFunc:  providerConfigure(),
 	}
 }
 
