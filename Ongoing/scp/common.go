@@ -1,3 +1,8 @@
+// 주요내용
+// 1. CommonResponse scp향으로 변경 완료
+// 2. logResponse 부분은 아예 폐쇄. >> 정상적인 로그 리스폰스 제한 (response관련 매개변수들이 ncp와 다르기 때문에 일단 주석처리)
+// 3. containsInStringList 역할 모름 >> 변경 x
+
 package scp
 
 // 대상 csp의 sdk를 import한다. < 이후 scp 향으로 수정 필요 
