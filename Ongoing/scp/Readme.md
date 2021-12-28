@@ -1,6 +1,7 @@
 수정 완료 파일목록
  - main.go
  - provider.go
+ - common.go
 
 
 수정 예정 파일목록
