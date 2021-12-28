@@ -5,8 +5,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/NaverCloudPlatform/ncloud-sdk-go-v2/ncloud"
-	"github.com/NaverCloudPlatform/ncloud-sdk-go-v2/services/vpc"
+	"github.com/jhp0204/Provider_test1/scp-clilib"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/validation"
@@ -74,11 +73,11 @@ func resourceScpVpcCreate(d *schema.ResourceData, meta interface{}) error {
 
 	reqParams := &vpc.CreateVpcRequest{
 		RegionCode:    &config.RegionCode,
-		Ipv4CidrBlock: ncloud.String(d.Get("ipv4_cidr_block").(string)),
+		Ipv4CidrBlock: scp-clilib.String(d.Get("ipv4_cidr_block").(string)),
 	}
 
 	if v, ok := d.GetOk("name"); ok {
-		reqParams.VpcName = ncloud.String(v.(string))
+		reqParams.VpcName = scp-clilib.String(v.(string))
 	}
 
 	logCommonRequest("CreateVpc", reqParams)
@@ -94,7 +93,7 @@ func resourceScpVpcCreate(d *schema.ResourceData, meta interface{}) error {
 	d.SetId(*vpcInstance.VpcNo)
 	log.Printf("[INFO] VPC ID: %s", d.Id())
 
-	if err := waitForNcloudVpcCreation(config, d.Id()); err != nil {
+	if err := waitForScpVpcCreation(config, d.Id()); err != nil {
 		return err
 	}
 
@@ -143,7 +142,7 @@ func resourceScpVpcRead(d *schema.ResourceData, meta interface{}) error {
 
 	return nil
 }
-
+/*
 func getDefaultNetworkACL(config *ProviderConfig, id string) (string, error) {
 	reqParams := &vpc.GetNetworkAclListRequest{
 		RegionCode: &config.RegionCode,
@@ -285,3 +284,4 @@ func getVpcInstance(config *ProviderConfig, id string) (*vpc.Vpc, error) {
 
 	return nil, nil
 }
+*/
