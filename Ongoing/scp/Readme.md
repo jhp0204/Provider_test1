@@ -17,5 +17,6 @@
   - common_schemas.txt >> region 정보들은 SCP의 VPC 생성시에 불필요하기 때문에 미사용 처리
   - data_source_ncloud_vpc.txt >> 기존 생성된 vpc 여부는 어짜피 tfstate파일을 통하여 check하기 떄문에, create 작업에서 불필요 할 것으로 판단.
   - data_source_ncloud_vpcs.txt >> 위와 이유 동일
-
+  - region.txt > vm 생성 시에 필요한 region code, name 등에 관련한 파일으로 추측, 미사용 파일 판단
+  - 
 이슈리스트 
