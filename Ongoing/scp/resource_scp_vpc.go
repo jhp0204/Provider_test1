@@ -80,22 +80,22 @@ func resourceScpVpcCreate(d *schema.ResourceData, meta interface{}) error {
 		reqParams.VpcName = scp-clilib.String(v.(string))
 	}
 
-	logCommonRequest("CreateVpc", reqParams)
+//	logCommonRequest("CreateVpc", reqParams)
 	resp, err := config.Client.vpc.V2Api.CreateVpc(reqParams)
-	if err != nil {
-		logErrorResponse("Create Vpc Instance", err, reqParams)
-		return err
-	}
+//	if err != nil {
+//		logErrorResponse("Create Vpc Instance", err, reqParams)
+//		return err
+//	}
 
-	logCommonResponse("CreateVpc", GetCommonResponse(resp))
+//	logCommonResponse("CreateVpc", GetCommonResponse(resp))
 
 	vpcInstance := resp.VpcList[0]
 	d.SetId(*vpcInstance.VpcNo)
 	log.Printf("[INFO] VPC ID: %s", d.Id())
 
-	if err := waitForScpVpcCreation(config, d.Id()); err != nil {
-		return err
-	}
+//	if err := waitForScpVpcCreation(config, d.Id()); err != nil {
+//		return err
+//	}
 
 	return resourceScpVpcRead(d, meta)
 }
@@ -103,7 +103,8 @@ func resourceScpVpcCreate(d *schema.ResourceData, meta interface{}) error {
 func resourceScpVpcRead(d *schema.ResourceData, meta interface{}) error {
 	config := meta.(*ProviderConfig)
 
-	instance, err := getVpcInstance(config, d.Id())
+	instance, err := 
+	(config, d.Id())
 	if err != nil {
 		return err
 	}
@@ -117,7 +118,7 @@ func resourceScpVpcRead(d *schema.ResourceData, meta interface{}) error {
 	d.Set("vpc_no", instance.VpcNo)
 	d.Set("name", instance.VpcName)
 	d.Set("ipv4_cidr_block", instance.Ipv4CidrBlock)
-
+/*
 	if *instance.VpcStatus.Code != "TERMTING" {
 		defaultNetworkACLNo, err := getDefaultNetworkACL(config, d.Id())
 		if err != nil {
@@ -139,7 +140,7 @@ func resourceScpVpcRead(d *schema.ResourceData, meta interface{}) error {
 		d.Set("default_public_route_table_no", publicRouteTableNo)
 		d.Set("default_private_route_table_no", privateRouteTableNo)
 	}
-
+*/
 	return nil
 }
 /*
