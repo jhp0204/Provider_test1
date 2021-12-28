@@ -1,5 +1,5 @@
 // 이후 scp sdk 개발 후, 상세내용 수정 필요
-package ncloud
+package scp
 
 import (
 	"encoding/json"
@@ -7,7 +7,7 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/NaverCloudPlatform/ncloud-sdk-go-v2/ncloud"
+	"github.com/jhp0204/Provider_test1/scp-clilib"
 )
 
 func validElem(i interface{}) bool {
@@ -22,7 +22,7 @@ func StringField(f reflect.Value) *string {
 	if f.Kind() == reflect.Ptr && f.Type().String() == "*string" {
 		return f.Interface().(*string)
 	} else if f.Kind() == reflect.Slice && f.Type().String() == "string" {
-		return ncloud.String(f.Interface().(string))
+		return scp.String(f.Interface().(string))
 	}
 	return nil
 }
@@ -107,7 +107,7 @@ func StringPtrOrNil(v interface{}, ok bool) *string {
 	if !ok {
 		return nil
 	}
-	return ncloud.String(v.(string))
+	return scp.String(v.(string))
 }
 
 //Int32PtrOrNil return *int32 from interface{}
@@ -118,13 +118,13 @@ func Int32PtrOrNil(v interface{}, ok bool) *int32 {
 
 	switch i := v.(type) {
 	case int:
-		return ncloud.Int32(int32(i))
+		return scp.Int32(int32(i))
 	case int32:
-		return ncloud.Int32(i)
+		return scp.Int32(i)
 	case int64:
-		return ncloud.Int32(int32(i))
+		return scp.Int32(int32(i))
 	default:
-		return ncloud.Int32(i.(int32))
+		return scp.Int32(i.(int32))
 	}
 }
 
@@ -133,7 +133,7 @@ func BoolPtrOrNil(v interface{}, ok bool) *bool {
 	if !ok {
 		return nil
 	}
-	return ncloud.Bool(v.(bool))
+	return scp.Bool(v.(bool))
 }
 
 // StringListPtrOrNil Convert from interface to []*string
@@ -156,7 +156,7 @@ func StringListPtrOrNil(i interface{}, ok bool) []*string {
 			vs = append(vs, v.(*string))
 		default:
 			// TODO: if the value is "" in list, occur crash error.
-			vs = append(vs, ncloud.String(v.(string)))
+			vs = append(vs, scp.String(v.(string)))
 		}
 	}
 	return vs
