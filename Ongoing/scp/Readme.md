@@ -2,12 +2,12 @@
  - main.go
  - provider.go
  - common.go
- - config.go >> provider config 부분 수정 필요
- - convert_types.go >> 연관되는 client lib 부문 및 사용사례 확인 필요
- - customize_diff.go >> vpc_name의 old , new 비교 및 출력메세지 설정 (필요한지 모르겠음)
- - errors.go >> vpc creation 불필요 func들은 모두 주석처리, 추가로 처리 필요한 error내용 확인 후, 수정 및 추가반영 필요
- - filters.go >> datasource.go에서 사용하는 func들은 주석처리, 쓰임새를 잘 모르겠는 함수들은 일단 유지
-
+ - config.go  > provider config 부분 수정 필요
+ - convert_types.go  > 연관되는 client lib 부문 및 사용사례 확인 필요
+ - customize_diff.go  > vpc_name의 old , new 비교 및 출력메세지 설정 (필요한지 모르겠음)
+ - errors.go  > vpc creation 불필요 func들은 모두 주석처리, 추가로 처리 필요한 error내용 확인 후, 수정 및 추가반영 필요
+ - filters.go  > datasource.go에서 사용하는 func들은 주석처리, 쓰임새를 잘 모르겠는 함수들은 일단 유지
+ - validators.go  > validator 값들의 제한범위 내용, 불필요할 경우에 미사용 파일로 변환 가능
 
 수정 예정 파일목록
   - resource_scp_vpc.go > resource 작업에 필요한 매개변수 및 func 리스트 확인 필요
@@ -20,3 +20,6 @@
   - region.txt > vm 생성 시에 필요한 region code, name 등에 관련한 파일으로 추측, 미사용 파일 판단
   - 
 이슈리스트 
+  1) Client Lib 부분 미반영 내용 확인 (ncloud > scp repo)
+  2) resource_scp_vpc.go 수정
+  3) AWS Server에서 해당 module 생성 및 terraform fmt 등 사전 명령어 수행 
