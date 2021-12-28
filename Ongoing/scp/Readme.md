@@ -4,7 +4,7 @@
  - common.go
  - config.go >> provider config 부분 수정 필요
  - convert_types.go >> 연관되는 client lib 부문 및 사용사례 확인 필요
-
+ - customize_diff.go >> vpc_name의 old , new 비교 및 출력메세지 설정 (필요한지 모르겠음)
 
 수정 예정 파일목록
 
