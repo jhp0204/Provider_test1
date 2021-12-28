@@ -12,7 +12,9 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
-func dataSourceFiltersSchema() *schema.Schema {
+// datasource_NAME.go에서 사용  > dataSourceFiltersSchema, ApplyFilters
+
+/*func dataSourceFiltersSchema() *schema.Schema {
 	return &schema.Schema{
 		Type:     schema.TypeSet,
 		Optional: true,
@@ -89,7 +91,7 @@ func ApplyFilters(filters *schema.Set, items []map[string]interface{}, resourceS
 
 	return items
 }
-
+*/
 //Converts the filter name which is delimited by '.' into a list of XPath elements
 //Read the filter name from left most token and look into schema map to interpret rest of the filter name string
 // e.g. for core_instance: freeform_tags.com.oracle.department -> ["freeform_tags", "com.oracle.department"], nil
