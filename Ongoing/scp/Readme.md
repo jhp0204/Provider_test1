@@ -6,6 +6,8 @@
  - convert_types.go >> 연관되는 client lib 부문 및 사용사례 확인 필요
  - customize_diff.go >> vpc_name의 old , new 비교 및 출력메세지 설정 (필요한지 모르겠음)
  - errors.go >> vpc creation 불필요 func들은 모두 주석처리, 추가로 처리 필요한 error내용 확인 후, 수정 및 추가반영 필요
+ - filters.go >> datasource.go에서 사용하는 func들은 주석처리, 쓰임새를 잘 모르겠는 함수들은 일단 유지
+
 
 수정 예정 파일목록
 
