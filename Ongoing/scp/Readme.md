@@ -10,7 +10,7 @@
 
 
 수정 예정 파일목록
-
+  - resource_scp_vpc.go > resource 작업에 필요한 매개변수 및 func 리스트 확인 필요
 
 
 미사용 파일 
