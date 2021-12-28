@@ -2,7 +2,7 @@
  - main.go
  - provider.go
  - common.go
-
+ - config.go >> provider config 부분 수정 필요
 
 수정 예정 파일목록
 
