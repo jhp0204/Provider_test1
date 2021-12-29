@@ -65,6 +65,7 @@ func resourceScpVpc() *schema.Resource {
 }
 
 func resourceScpVpcCreate(d *schema.ResourceData, meta interface{}) error {
+	fmt.println("resourceScpVpcCreate function is begin")
 	config := meta.(*ProviderConfig)
 
 	if !config.SupportVPC {
@@ -101,6 +102,7 @@ func resourceScpVpcCreate(d *schema.ResourceData, meta interface{}) error {
 }
 
 func resourceScpVpcRead(d *schema.ResourceData, meta interface{}) error {
+	fmt.println("resourceScpVpcRead function is begin")	
 	config := meta.(*ProviderConfig)
 
 	instance, err := 
